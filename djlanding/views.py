@@ -1,22 +1,22 @@
 # Create your views here.
 from django.template import RequestContext
 from django.shortcuts import render_to_response
-from models import UserEmailForm
+from models import UserForm
 
 
 def index(request):
-
     if request.method == 'POST':
-        user_form = UserEmailForm(request.POST)
+        user_form = UserForm(request.POST)
         if user_form.is_valid():
-            user_email = user_form.save()
+            user = user_form.save()
             context = {
-                'email': user_email.email}
+                'user_form': user_form,
+                'email': user.email}
         else:
             context = {
                 'user_form': user_form}
     else:
-        user_form = UserEmailForm()
+        user_form = UserForm()
         context = {
             'user_form': user_form}
 

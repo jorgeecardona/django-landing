@@ -3,10 +3,14 @@ from setuptools import setup, find_packages
 
 setup(
     name='djlanding',
-    version='0.1.0',
+    version='0.1.2',
     description='Basic landing page for Django projects.',
     author='NuageHQ',
     author_email='djlanding@nuagehq.com',
     license='BSD',
     keywords='landing django',
-    packages=find_packages())
+    url='http://pypi.python.org/pypi/djlanding/',
+    packages=find_packages(),
+    install_requires=[
+        'greatape',
+        ])
