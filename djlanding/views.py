@@ -6,7 +6,7 @@ from models import UserForm
 
 DEFAULT_TEMPLATE = settings.DJLANDING_DEFAULT_TEMPLATE if hasattr(settings, 'DJLANDING_DEFAULT_TEMPLATE') else 'landing/index.html'
 
-def index(request, success_template):
+def index(request, success_template=''):
     template = DEFAULT_TEMPLATE
     
     if request.method == 'POST':
