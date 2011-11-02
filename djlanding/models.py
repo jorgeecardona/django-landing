@@ -18,13 +18,13 @@ class User(models.Model):
 def add_email_to_mailchimp(sender, instance, created, **kwargs):
 
     # Check first if the mailchimp key is present.
-    if hasattr(settings, 'DJLANDING_MAILCHIMP_API'):
+    if not hasattr(settings, 'DJLANDING_MAILCHIMP_API'):
         logging.info('MailChimp API not present')
         return
     mailchimp_api = settings.DJLANDING_MAILCHIMP_API
 
     # Check for mailchimp list.
-    if hasattr(settings, 'DJLANDING_MAILCHIMP_LIST'):
+    if not hasattr(settings, 'DJLANDING_MAILCHIMP_LIST'):
         logging.error('MailChimp List not defined')
         return
     mailchimp_list = settings.DJLANDING_MAILCHIMP_LIST
