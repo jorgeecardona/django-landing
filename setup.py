@@ -3,7 +3,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='djlanding',
-    version='0.1.4',
+    version='0.1.6',
     description='Basic landing page for Django projects.',
     author='NuageHQ',
     author_email='djlanding@nuagehq.com',
